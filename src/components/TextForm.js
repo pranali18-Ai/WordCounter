@@ -59,52 +59,56 @@ export default function TextForm(props) {
   };
   return (
     <>
-      <div className="container">
-        <h1>{props.heading}</h1>
-        <div className="mb-3">
-          <textarea
-            className="form-control"
-            value={text}
-            onChange={handleOnChange}
-            id="myBox"
-            rows="8"
-            placeholder="Enter the text here"
-          ></textarea>
-        </div>
-        <button className="btn btn-dark mx-1" onClick={handleUpClick}>
-          &#8593; Uppercase
-        </button>
-        <button className="btn btn-dark mx-1" onClick={handleLoClick}>
-          &#8595; Lowercase
-        </button>
-
-        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-          <button className="btn btn-dark" onClick={handleUndo}>
-            &#8617; Undo
+      <div style={{ backgroundColor: props.mode === 'dark' ? 'grey' : 'white', color: props.mode === 'dark' ? 'white' : 'black' }}>
+        <div className="container" style={{ color: props.mode === 'dark' ? 'white' : 'black' }}>
+          <h1>{props.heading}</h1>
+          <div className="mb-3">
+            <textarea
+              className="form-control border-4 "
+              value={text}
+              onChange={handleOnChange}
+              style={{ backgroundColor: props.mode === 'dark' ? 'grey' : 'white', color: props.mode === 'dark' ? 'white' : 'black' }}
+              id="myBox"
+              rows="8"
+              placeholder="Enter the text here"
+            ></textarea>
+          </div>
+          <button className="btn btn-dark mx-1" onClick={handleUpClick}>
+            &#8593; Uppercase
           </button>
-          <button className="btn btn-secondary" onClick={handleRedo}>
-            &#8618; Redo
+          <button className="btn btn-dark mx-1" onClick={handleLoClick}>
+            &#8595; Lowercase
           </button>
+
+          <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+            <button className="btn btn-dark" onClick={handleUndo}>
+              &#8617; Undo
+            </button>
+            <button className="btn btn-secondary" onClick={handleRedo}>
+              &#8618; Redo
+            </button>
+          </div>
+
+          <button className="btn btn-dark mx-1" onClick={handleclear}>
+            &#128465; Clear</button>
+          <button className="btn btn-dark mx-1" onClick={handlecopy}>
+            &#128458; Copy</button>
+          <button className="btn btn-dark mx-1" onClick={handleExtraspaces}>
+            &#x2717; Remove Extra Spaces</button>
+
+
         </div>
 
-        <button className="btn btn-dark mx-1" onClick={handleclear}>
-          &#128465; Clear</button>
-        <button className="btn btn-dark mx-1" onClick={handlecopy}>
-          &#128458; Copy</button>
-        <button className="btn btn-dark mx-1" onClick={handleExtraspaces}>
-          &#x2717; Remove Extra Spaces</button>
+        <div className="container my-3">
+          <h1>Your text summary</h1>
+          <p>
+            {text.split(' ').length} words and {text.length} characters
+          </p>
+          <p>{0.008 * text.split(' ').length} Minutes to Read</p>
+          <h2>Preview</h2 >
 
-
-      </div>
-
-      <div className="container my-3">
-        <h1>Your text summary</h1>
-        <p>
-          {text.split(' ').length} words and {text.length} characters
-        </p>
-        <p>{0.008 * text.split(' ').length} Minutes to Read</p>
-        <h2>Preview</h2>
-        <p>{text}</p>
+          <p>{text.length > 0 ? text : "Enter Something to Preview here"}</p>
+        </div>
       </div>
     </>
   );
