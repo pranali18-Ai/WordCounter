@@ -19,55 +19,63 @@ export default function TextForm(props) {
   const handleUpClick = () => {
     const newText = text.toUpperCase();
     addToHistory(newText);
+    props.showAlert("Converted to Uppercase", "success");
   };
 
   const handleLoClick = () => {
     const newText = text.toLowerCase();
     addToHistory(newText);
+    props.showAlert("Converted to Lowercase", "success");
   };
 
   const handleOnChange = (event) => {
     const newText = event.target.value;
     addToHistory(newText);
+
   };
 
   const handleUndo = () => {
     if (historyIndex > 0) {
       setHistoryIndex(historyIndex - 1);
+      props.showAlert("Undo", "success");
     }
   };
 
   const handleRedo = () => {
     if (historyIndex < textHistory.length - 1) {
       setHistoryIndex(historyIndex + 1);
+      props.showAlert("Redo", "success");
     }
   };
   const handleclear = () => {
     setText(' ');
     setTextHistory([' ']);
     setHistoryIndex(0);
+    props.showAlert("Cleared text", "success");
   };
 
   const handlecopy = () => {
     var text = document.getElementById("myBox");
     text.select();
     navigator.clipboard.writeText(text.value);
+    props.showAlert("Copied to Clipboard", "success");
   };
   const handleExtraspaces = () => {
     let newText = text.split(/\s+/);
     setText(newText.join(" "));
+    props.showAlert(" Removed the ExtraSpaces", "success");
   };
   return (
     <>
-      <div style={{ backgroundColor: props.mode === 'dark' ? 'grey' : 'white', color: props.mode === 'dark' ? 'white' : 'black' }}>
-        <div className="container" style={{ color: props.mode === 'dark' ? 'white' : 'black' }}>
+      <div style={{ backgroundColor: props.mode === 'dark' ? '#041e45' : 'white', color: props.mode === 'dark' ? 'white' : '#041e45' }}>
+        <div className="container" style={{ color: props.mode === 'dark' ? 'white' : '#041e45' }}>
           <h1>{props.heading}</h1>
           <div className="mb-3">
             <textarea
-              className="form-control border-4 "
+              className="form-control border-5 "
               value={text}
               onChange={handleOnChange}
-              style={{ backgroundColor: props.mode === 'dark' ? 'grey' : 'white', color: props.mode === 'dark' ? 'white' : 'black' }}
+              style={{ backgroundColor: props.mode === 'dark' ? 'grey' : 'white', color: props.mode === 'dark' ? 'white' : '#041e45' }}
               id="myBox"
               rows="8"
               placeholder="Enter the text here"
@@ -80,7 +88,7 @@ export default function TextForm(props) {
             &#8595; Lowercase
           </button>
 
-          <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+          <div className="btn-group" role="group" aria-label="Basic mixed styles example">
             <button className="btn btn-dark" onClick={handleUndo}>
               &#8617; Undo
             </button>
@@ -91,7 +99,7 @@ export default function TextForm(props) {
 
           <button className="btn btn-dark mx-1" onClick={handleclear}>
             &#128465; Clear</button>
-          <button className="btn btn-dark mx-1" onClick={handlecopy}>
+          <button className="btn btn-dark mx-1 my-2" onClick={handlecopy}>
             &#128458; Copy</button>
           <button className="btn btn-dark mx-1" onClick={handleExtraspaces}>
             &#x2717; Remove Extra Spaces</button>
@@ -105,8 +113,8 @@ export default function TextForm(props) {
             {text.split(' ').length} words and {text.length} characters
           </p>
           <p>{0.008 * text.split(' ').length} Minutes to Read</p>
-          <h2>Preview</h2 >
 
+          <h2>Preview</h2 >
           <p>{text.length > 0 ? text : "Enter Something to Preview here"}</p>
         </div>
       </div>
