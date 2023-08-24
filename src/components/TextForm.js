@@ -81,7 +81,7 @@ export default function TextForm(props) {
               placeholder="Enter the text here"
             ></textarea>
           </div>
-          <button className="btn btn-dark mx-1" onClick={handleUpClick}>
+          <button className="btn btn-dark mx-1" onClick={handleUpClick} id='mybutton'>
             &#8593; Uppercase
           </button>
           <button className="btn btn-dark mx-1" onClick={handleLoClick}>
@@ -89,19 +89,19 @@ export default function TextForm(props) {
           </button>
 
           <div className="btn-group" role="group" aria-label="Basic mixed styles example">
-            <button className="btn btn-dark" onClick={handleUndo}>
+            <button className="btn btn-dark" onClick={handleUndo} id='mybutton'>
               &#8617; Undo
             </button>
-            <button className="btn btn-secondary" onClick={handleRedo}>
+            <button className="btn btn-secondary" onClick={handleRedo} id='mybutton'>
               &#8618; Redo
             </button>
           </div>
 
-          <button className="btn btn-dark mx-1" onClick={handleclear}>
+          <button className="btn btn-dark mx-1" onClick={handleclear} id='mybutton'>
             &#128465; Clear</button>
-          <button className="btn btn-dark mx-1 my-2" onClick={handlecopy}>
+          <button className="btn btn-dark mx-1 my-2" onClick={handlecopy} id='mybutton'>
             &#128458; Copy</button>
-          <button className="btn btn-dark mx-1" onClick={handleExtraspaces}>
+          <button className="btn btn-dark mx-1" onClick={handleExtraspaces} id='mybutton'>
             &#x2717; Remove Extra Spaces</button>
 
 
