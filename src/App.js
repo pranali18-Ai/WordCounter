@@ -8,9 +8,9 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
-
 } from "react-router-dom";
+
+import { Switch } from 'react-router-dom';
 
 
 
@@ -70,7 +70,6 @@ function App() {
           <About />
         </Router>
       </div>
-
 
     </>
 
