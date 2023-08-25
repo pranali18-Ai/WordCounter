@@ -47,19 +47,9 @@ function App() {
 
       <Navbar title="Poshly" about="About" mode={mode} toggleMode={toggleMode} />
       <Alert alert={alert} />
+      <TextForm mode={mode} toggleMode={toggleMode} />
+      <About />
       <div className="container my-3">
-        <Router>
-          <Switch>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/">
-              <TextForm showAlert={showAlert} heading="Enter the text to Analyze" mode={mode} />
-            </Route>
-          </Switch>
-          <TextForm showAlert={showAlert} heading="Enter the text to Analyze" mode={mode} />
-          <About />
-        </Router>
       </div>
 
     </>
