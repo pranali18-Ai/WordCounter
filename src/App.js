@@ -4,15 +4,6 @@ import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import Alert from './components/Alert';
 import About from './components/About';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
-
-import { Switch } from 'react-router-dom';
-
-
 
 function App() {
   const [mode, setmode] = useState('light');
