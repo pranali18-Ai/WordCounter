@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
@@ -7,7 +8,6 @@ import About from './components/About';
 
 function App() {
   const [mode, setmode] = useState('light');
-
   const [alert, setAlert] = useState(null);
 
   const showAlert = (message, type) => {
@@ -24,7 +24,6 @@ function App() {
     if (mode === 'light') {
       setmode('dark');
       document.body.style.backgroundColor = '#041e45';
-
       showAlert("Dark mode enabled", "success");
       document.title = 'Poshly - Blue Mode';
       //   setInterval(() => {
@@ -41,19 +40,25 @@ function App() {
       showAlert("Light Mode Enabled", "success");
       document.title = 'Poshly - Light Mode';
     }
-  }
+  };
+
   return (
     <>
-
-      <Navbar title="Poshly" about="About" mode={mode} toggleMode={toggleMode} />
-      <Alert alert={alert} />
-      <TextForm mode={mode} toggleMode={toggleMode} />
-      <About />
-      <div className="container my-3">
-      </div>
-
+      <Router>
+        <Navbar title="Poshly" mode={mode} toggleMode={toggleMode} />
+        <Alert alert={alert} />
+        <div className="container my-4">
+          <Switch>
+            <Route exact path="/about">
+              <About />
+            </Route>
+            <Route exact path="/">
+              <TextForm showAlert={showAlert} heading="Enter Text to analyze " mode={mode} />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
     </>
-
   );
 }
 
