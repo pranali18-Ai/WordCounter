@@ -45,18 +45,18 @@ function App() {
   return (
     <>
       <Router>
-        <Navbar title="Poshly" mode={mode} toggleMode={toggleMode} />
-        <Alert alert={alert} />
-        <div className="container my-4">
-          <Switch>
-            <Route exact path="/about">
-              <About />
-            </Route>
-            <Route exact path="/">
-              <TextForm showAlert={showAlert} heading="Enter Text to analyze " mode={mode} />
-            </Route>
-          </Switch>
-        </div>
+      <Navbar title="Poshly" mode={mode} toggleMode={toggleMode} />
+      <Alert alert={alert} />
+      <div className="container my-4">
+        <Switch>
+        <Route exact path="/about">
+        <About mode={mode} />
+        </Route>
+        <Route exact path="/">
+        <TextForm showAlert={showAlert} heading="Enter Text to analyze " mode={mode} />
+        </Route>
+        </Switch>
+      </div>
       </Router>
     </>
   );
