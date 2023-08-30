@@ -25,7 +25,7 @@ function App() {
       setmode('dark');
       document.body.style.backgroundColor = '#041e45';
       showAlert("Dark mode enabled", "success");
-      document.title = 'Poshly - Blue Mode';
+      // document.title = 'Poshly - Blue Mode';
       //   setInterval(() => {
       //     document.title = 'Poshly-Dark Mode';
       //   }, 2000);
@@ -38,7 +38,7 @@ function App() {
       document.body.style.backgroundColor = 'white';
 
       showAlert("Light Mode Enabled", "success");
-      document.title = 'Poshly - Light Mode';
+      // document.title = 'Poshly - Light Mode';
     }
   };
 
@@ -52,8 +52,8 @@ function App() {
         <Route exact path="/about">
         <About mode={mode} />
         </Route>
-        <Route exact path="/">
-        <TextForm showAlert={showAlert} heading="Enter Text to analyze " mode={mode} />
+        <Route exact path="/">         
+        <TextForm showAlert={showAlert} heading="Word Counter " mode={mode} />
         </Route>
         </Switch>
       </div>

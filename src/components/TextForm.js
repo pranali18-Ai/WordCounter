@@ -69,13 +69,13 @@ export default function TextForm(props) {
     <>
       <div style={{ backgroundColor: props.mode === 'dark' ? '#041e45' : 'white', color: props.mode === 'dark' ? 'white' : '#041e45' }}>
         <div className="container" style={{ color: props.mode === 'dark' ? 'white' : '#041e45' }}>
-          <h1>{props.heading}</h1>
+          <h1 className='mb-4  text-center'>{props.heading}</h1>
           <div className="mb-3">
             <textarea
               className="form-control border-5 "
               value={text}
               onChange={handleOnChange}
-              style={{ backgroundColor: props.mode === 'dark' ? 'grey' : 'white', color: props.mode === 'dark' ? 'white' : '#041e45' }}
+              style={{ backgroundColor: props.mode === 'dark' ? '#13466e' : 'white', color: props.mode === 'dark' ? 'white' : '#041e45' }}
               id="myBox"
               rows="8"
               placeholder="Enter the text here"
@@ -109,7 +109,7 @@ export default function TextForm(props) {
           <p>
             {text.split(" ").filter((element)=>{return element.length!==0}).length} words and {text.length} characters
           </p>
-          <p>{0.008 * text.split(" ").length}Minutes to Read</p>
+          <p>{0.008 * text.split(" ").filter((element)=>{return element.length!==0}).length} Minutes to Read</p>
 
           <h2>Preview</h2 >
           <p>{text.length > 0 ? text : "Enter Something to Preview here"}</p>

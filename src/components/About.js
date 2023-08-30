@@ -6,11 +6,15 @@ export default function About(props) {
     // const [myStyle, setMyStyle] = useState({
     //     color: '#041e45',
     //     backgroundColor: 'white'
+ 
 
     // })
 let myStyle = {
-    color:props.mode==='dark'?'white': '#041e45',
-    backgroundColor:props.mode==='dark'?'#041e45':'white'
+    color:props.mode==='dark'?'white': '#042743',
+    backgroundColor: props.mode ==='dark'?'rgb(36, 74, 104)':'white',
+    // border:'0.1px solid',
+    // borderColor: props.mode ==='dark'?'white':'#042743'
+    borderColor: props.mode ==='dark'?'white': '#e1e1d0'
 }
 
     //Button text 
@@ -35,8 +39,8 @@ let myStyle = {
 
 
     return (
-        <><div className='container' style={myStyle}>
-            <h1 className='my-2'>About Us</h1>
+        <><div className="container">
+            <h1 className='my-3' style={{color: props.mode === 'dark'? 'white':'#042743'}}>About Us</h1>
             <div className="accordion" id="accordionExample">
                 <div className="accordion-item">
                     <h2 className="accordion-header" id="headingOne">
@@ -78,7 +82,5 @@ let myStyle = {
                 <button onClick={togglestyle} type="button" className="btn btn-primary">{btnText}</button>
             </div> */}
         </>
-
-
     )
 }
