@@ -49,11 +49,11 @@ function App() {
       <Alert alert={alert} />
       <div className="container my-4">
         <Switch>
-        <Route exact path="/about">
-        <About mode={mode} />
-        </Route>
         <Route exact path="/">         
         <TextForm showAlert={showAlert} heading="Word Counter " mode={mode} />
+        </Route>
+        <Route exact path="/about">
+        <About mode={mode} />
         </Route>
         </Switch>
       </div>

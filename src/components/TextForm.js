@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 export default function TextForm(props) {
-  const [text, setText] = useState('Enter text here');
+  const [text, setText] = useState('');
   const [textHistory, setTextHistory] = useState([text]);
   const [historyIndex, setHistoryIndex] = useState(0);
 
@@ -58,6 +58,7 @@ export default function TextForm(props) {
     var text = document.getElementById("myBox");
     text.select();
     navigator.clipboard.writeText(text.value);
+    document.getSelection().removeAllRanges();
     props.showAlert("Copied to Clipboard", "success");
   };
   const handleExtraspaces = () => {
@@ -74,31 +75,31 @@ export default function TextForm(props) {
             <textarea
               className="form-control border-5 "
               value={text}
-              onChange={handleOnChange}
+              onChange={handleOnChange}  
               style={{ backgroundColor: props.mode === 'dark' ? '#13466e' : 'white', color: props.mode === 'dark' ? 'white' : '#041e45' }}
               id="myBox"
               rows="8"
               placeholder="Enter the text here"
             ></textarea>
           </div>
-          <button className="btn btn-dark mx-1 my-1" onClick={handleUpClick} id='mybutton'>
+          <button disabled={text.trim().length===0} className="btn btn-dark mx-1 my-1" onClick={handleUpClick} id='mybutton'>
             &#8593; Uppercase
           </button>
-          <button className="btn btn-dark mx-1 my-1" onClick={handleLoClick}>
+          <button disabled={text.trim().length===0} className="btn btn-dark mx-1 my-1" onClick={handleLoClick}>
             &#8595; Lowercase
           </button>     
-            <button className="btn btn-dark mx-1 my-1" onClick={handleUndo} id='mybutton'>
+            <button disabled={text.trim().length===0} className="btn btn-dark mx-1 my-1" onClick={handleUndo} id='mybutton'>
               &#8617; Undo
             </button>
-            <button className="btn btn-secondary mx-1 my-1" onClick={handleRedo} id='mybutton'>
+            <button disabled={text.trim().length===0} className="btn btn-secondary mx-1 my-1" onClick={handleRedo} id='mybutton'>
               &#8618; Redo
             </button>
 
-          <button className="btn btn-dark mx-1 my-1" onClick={handleclear} id='mybutton'>
+          <button disabled={text.trim().length===0} className="btn btn-dark mx-1 my-1" onClick={handleclear} id='mybutton'>
             &#128465; Clear</button>
-          <button className="btn btn-dark mx-1 my-1" onClick={handlecopy} id='mybutton'>
+          <button disabled={text.trim().length===0} className="btn btn-dark mx-1 my-1" onClick={handlecopy} id='mybutton'>
             &#128458; Copy</button>
-          <button className="btn btn-dark mx-1 my-1" onClick={handleExtraspaces} id='mybutton'>
+          <button disabled={text.trim().length===0} className="btn btn-dark mx-1 my-1" onClick={handleExtraspaces} id='mybutton'>
             &#x2717; Remove Extra Spaces</button>
 
 
@@ -107,12 +108,12 @@ export default function TextForm(props) {
         <div className="container my-3">
           <h1>Your text summary</h1>
           <p>
-            {text.split(" ").filter((element)=>{return element.length!==0}).length} words and {text.length} characters
+          {text.trim().split(" ").filter((element) => element.length !== 0).length} words and {text.replace(/\s/g, '').length} characters
           </p>
           <p>{0.008 * text.split(" ").filter((element)=>{return element.length!==0}).length} Minutes to Read</p>
 
           <h2>Preview</h2 >
-          <p>{text.length > 0 ? text : "Enter Something to Preview here"}</p>
+          <p>{text.length > 0 ? text : "Nothing To Preview!"}</p>
         </div>
       </div>
     </>

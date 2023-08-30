@@ -1,6 +1,6 @@
 {
-    "homepage": "https://pranali18-Ai.github.io/react_course",
-    "name": "react_course",
+    "homepage": "https://pranali18-Ai.github.io/",
+    "name": "poshly",
     "version": "0.1.0",
     "private": true,
     "dependencies": {
@@ -20,7 +20,8 @@
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject"
-    },
+      },
+      
     "eslintConfig": {
         "extends": [
             "react-app",
