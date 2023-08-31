@@ -23,7 +23,7 @@ export default function Navbar(props) {
             </li>
           </ul>
 <div className='d-flex'>
-  <div className='bg-primary rounded mx-2' style={{height: '30px', width:'30px'}}></div>
+  <div className='bg-primary rounded mx-2' onClick={props.toggleMode} style={{height: '30px', width:'30px'}}></div>
 </div>
           <form className="d-flex mx-2">
             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
