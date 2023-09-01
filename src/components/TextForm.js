@@ -55,10 +55,10 @@ export default function TextForm(props) {
   };
 
   const handlecopy = () => {
-    var text = document.getElementById("myBox");
-    text.select();
-    navigator.clipboard.writeText(text.value);
-    document.getSelection().removeAllRanges();
+    // var text = document.getElementById("myBox");
+    // text.select();
+    navigator.clipboard.writeText(text);
+    // document.getSelection().removeAllRanges();
     props.showAlert("Copied to Clipboard", "success");
   };
   const handleExtraspaces = () => {
@@ -71,6 +71,7 @@ export default function TextForm(props) {
       <div style={{ backgroundColor: props.mode === 'dark' ? '#041e45' : 'white', color: props.mode === 'dark' ? 'white' : '#041e45' }}>
         <div className="container" style={{ color: props.mode === 'dark' ? 'white' : '#041e45' }}>
           <h1 className='mb-4  text-center'>{props.heading}</h1>
+
           <div className="mb-3">
             <textarea
               className="form-control border-5 "
@@ -82,6 +83,7 @@ export default function TextForm(props) {
               placeholder="Enter the text here"
             ></textarea>
           </div>
+
           <button disabled={text.trim().length===0} className="btn btn-dark mx-1 my-1" onClick={handleUpClick} id='mybutton'>
             &#8593; Uppercase
           </button>
@@ -108,7 +110,7 @@ export default function TextForm(props) {
         <div className="container my-3">
           <h1>Your text summary</h1>
           <p>
-          {text.trim().split(" ").filter((element) => element.length !== 0).length} words and {text.replace(/\s/g, '').length} characters
+          {text.trim().split(/\s+/ ).filter((element) => element.length !== 0).length} words and {text.replace(/\s/g, '').length} characters
           </p>
           <p>{0.008 * text.split(" ").filter((element)=>{return element.length!==0}).length} Minutes to Read</p>
 
