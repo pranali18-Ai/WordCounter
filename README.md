@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+# Poshly-Word Counter
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple React application for analyzing text input. You can use it to count words in a given text and switch between light and dark modes. It's a great project to showcase on your resume.
 
-## Available Scripts
+## Table of Contents
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Features](#features)
+- [Project Structure](#project-structure)
+- [License](#license)
 
-In the projec directory, you can run:
+## Getting Started
 
-### `npm start`
+To get started with this project, follow these steps:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Clone the repository to your local machine:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+   ```shell
+   git clone <repository-url>
+   ```
 
-### `npm test`
+2. Navigate to the project directory:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   ```shell
+   cd text-analyzer-app
+   ```
 
-### `npm run build`
+3. Install the project dependencies:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ```shell
+   npm install
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. Start the development server:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```shell
+   npm start
+   ```
 
-### `npm run eject`
+Now, you should be able to access the application in your web browser at `http://localhost:3000`.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Usage
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The application allows you to:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Analyze text by counting the number of words.
+- Toggle between light and dark modes for a personalized experience.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Features
 
-## Learn More
+### Word Count
+- The main feature of this application is to count the number of words in the input text.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Dark and Light Mode
+- You can switch between dark and light modes by clicking the mode toggle button in the navigation bar.
+- Dark mode provides a visually appealing interface with a dark background, while light mode offers a clean and bright design.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Project Structure
 
-### Code Splitting
+The project structure is organized as follows:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- `src/`: Contains the source code for the React application.
+  - `components/`: Contains React components used in the application.
+    - `Navbar.js`: The navigation bar component.
+    - `TextForm.js`: The text input and analysis component.
+    - `Alert.js`: The alert component for displaying notifications.
+    - `About.js`: The about page component.
+  - `App.js`: The main application component.
+- `App.css`: CSS styles for the application.
+- `index.js`: Entry point for the React application.
+- `README.md`: This README file.
 
-### Analyzing the Bundle Size
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Feel free to customize and use this project to showcase your skills on your resume. Enjoy coding!
