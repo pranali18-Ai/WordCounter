@@ -72,6 +72,4 @@ The project structure is organized as follows:
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-Feel free to customize and use this project to showcase your skills on your resume. Enjoy coding!
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for deta
