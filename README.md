@@ -69,7 +69,3 @@ The project structure is organized as follows:
 - `App.css`: CSS styles for the application.
 - `index.js`: Entry point for the React application.
 - `README.md`: This README file.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for deta
