@@ -1,7 +1,5 @@
 # Poshly-Word Counter
 
-This is a simple React application for analyzing text input. You can use it to count words in a given text and switch between light and dark modes. It's a great project to showcase on your resume.
-
 ## Table of Contents
 - [Getting Started](#getting-started)
 - [Usage](#usage)
