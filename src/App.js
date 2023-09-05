@@ -21,19 +21,12 @@ function App() {
   }
 
   const toggleMode = () => {
-    // console.log(cls)
     // document.body.classList.add('bg-'+ cls )
     if (mode === 'light') {
       setmode('dark');
       document.body.style.backgroundColor = '#041e45';
       showAlert("Dark mode enabled", "success");
-      // document.title = 'Poshly - Blue Mode';
-      //   setInterval(() => {
-      //     document.title = 'Poshly-Dark Mode';
-      //   }, 2000);
-      //   setInterval(() => {
-      //     document.title = 'Install Poshly now';
-      //   }, 1500);
+     
     }
     else {
       setmode('light');
