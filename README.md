@@ -66,4 +66,3 @@ The project structure is organized as follows:
   - `App.js`: The main application component.
 - `App.css`: CSS styles for the application.
 - `index.js`: Entry point for the React application.
-- `README.md`: This README file.
