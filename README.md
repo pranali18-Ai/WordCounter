@@ -50,8 +50,7 @@ The application allows you to:
 - The main feature of this application is to count the number of words in the input text.
 
 ### Dark and Light Mode
-- You can switch between dark and light modes by clicking the mode toggle button in the navigation bar.
-- Dark mode provides a visually appealing interface with a dark background, while light mode offers a clean and bright design.
+- You can switch between dark and light modes by clicking the mode toggle button in the navigatio
 
 ## Project Structure
 
